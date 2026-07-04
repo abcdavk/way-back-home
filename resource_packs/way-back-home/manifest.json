@@ -1,0 +1,40 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Way Back Home: Waypoint",
+    "description": "by abcdave",
+    "uuid": "b8780a49-a93f-44ae-acd9-203fcf5e533f",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      26,
+      30
+    ]
+  },
+  "modules": [
+    {
+      "description": "Add-on Pack Resources",
+      "type": "resources",
+      "uuid": "523d72d2-3ba9-498a-bc63-8beb5fe268cb",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "0e21d1c9-fac6-44bd-a1f7-e1416ae25562",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}
