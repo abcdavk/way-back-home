@@ -1,7 +1,7 @@
 import { Player } from "@minecraft/server";
 import { Wayback, WAYBACK_PROPERTY, WaybackCreateOptions, WaybackUpdateOptions } from "../const/manager";
 
-class WaybackManager {
+export class WaybackManager {
   constructor (private readonly player: Player) {}
 
   private load(): Wayback[] {

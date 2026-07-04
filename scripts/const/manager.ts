@@ -12,7 +12,8 @@ export interface Wayback {
 }
 
 export interface WaybackAppearance {
-  icon: string;
+  icon: number;
+  color: number
   visible: boolean;
 }
 
