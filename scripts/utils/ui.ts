@@ -26,8 +26,14 @@ export class ComputedString extends ObservableString {
 }
 
 export function sanitizeNumber(value: string): string {
+  if (value === "0-") {
+    return "-";
+  }
+
   value = value.replace(/[^\d.-]/g, "");
+
   value = value.replace(/(?!^)-/g, "");
+
   const dot = value.indexOf(".");
   if (dot !== -1) {
     value =
@@ -35,18 +41,33 @@ export function sanitizeNumber(value: string): string {
       value.slice(dot + 1).replace(/\./g, "");
   }
 
-  if (
-    value === "" ||
-    value === "-" ||
-    value === "." ||
-    value === "-."
-  ) {
+  if (value === "-") {
+    return "-";
+  }
+
+  if (value === "") {
+    return "0";
+  }
+
+  // Jika hanya titik, ubah menjadi 0.
+  if (value === ".") {
+    return "0.";
+  }
+
+  // Jika "-."
+  if (value === "-.") {
+    return "-0.";
+  }
+
+  // Kosong menjadi 0
+  if (value === "") {
     return "0";
   }
 
   const negative = value.startsWith("-");
   let number = negative ? value.slice(1) : value;
 
+  // Hilangkan nol di depan kecuali sebelum desimal
   if (number.startsWith("0")) {
     number = number.replace(/^0+(?=\d)/, "");
 

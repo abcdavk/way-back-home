@@ -5,6 +5,8 @@ import { WaybackManager } from "./manager";
 import { colors, RGBA_TRANSPARENT } from "../const/colors";
 import { locatorIcons, locatorLetters } from "../const/icons";
 
+const playerFloatingTexts = new Map<string, TextPrimitive[]>
+
 export function getLocatorBarIconPath(
   label: string,
   icon: number,
@@ -73,6 +75,15 @@ export function playerAddFloatingText(player: Player, wayback: Wayback) {
 
   world.primitiveShapesManager.addText(waybackIcon);
   world.primitiveShapesManager.addText(waybackLabel);
+
+  const floatingTexts = playerFloatingTexts.get(player.id);
+  if (floatingTexts !== undefined) {
+    floatingTexts.push(waybackIcon);
+    floatingTexts.push(waybackLabel);
+    playerFloatingTexts.set(player.id, floatingTexts);
+  } else {
+    playerFloatingTexts.set(player.id, [ waybackIcon, waybackLabel ]);
+  }
 }
 
 export function playerAddLocatorBar(player: Player, wayback: Wayback) {
@@ -116,58 +127,10 @@ export function playerAddLocatorBar(player: Player, wayback: Wayback) {
   player.locatorBar.addWaypoint(waypoint);
 }
 
-// export function playerRemoveLocatorBar(player: Player, wayback: Wayback) {
-//   const dimension = world.getDimension(wayback.dimension);
-
-//   const dimesionLocation: DimensionLocation = {
-//     dimension,
-//     x: wayback.location.x,
-//     y: wayback.location.y,
-//     z: wayback.location.z,
-//   }
-
-//   const textureSelector: WaypointTextureSelector = {
-//     textureBoundsList: [
-//       {
-//         lowerBound: 0,
-//         texture: {
-//           iconHeight: 1,
-//           iconWidth: 1,
-//           path: getLocatorBarIconPath(wayback.label, wayback.appearance.icon, wayback.appearance.color),
-//         }
-//       }
-//     ]
-//   };
-
-//   const waypoint = new LocationWaypoint(
-//     dimesionLocation,
-//     textureSelector,
-//     { red: 1, green: 0, blue: 0 }
-//   );
-
-//   const locatorBars = playerLocatorBars.get(player.id);
-//   if (locatorBars === undefined) return;
-//   if (locatorBars) {
-//     if (locatorBars.find(v => v === wayback.id)) {
-//       console.log("Waypoint not found.")
-//       return false;
-//     } else {
-//       const index = locatorBars.findIndex(v => v === wayback.id);
-
-//       if (index === -1) {
-//         return false;
-//       }
-
-//       locatorBars.splice(index, 1);
-//       playerLocatorBars.set(player.id, locatorBars);
-//     }
-//   }
-
-//   player.locatorBar.removeWaypoint(waypoint);
-// }
-
 export function playerClearFloatingText(player: Player) {
-  world.primitiveShapesManager.removeAll();
+  const floatingTexts = playerFloatingTexts.get(player.id);
+  if (floatingTexts === undefined) return
+  floatingTexts.forEach(text => world.primitiveShapesManager.removeText(text));    
 }
 
 export function playerClearLocator(player: Player) {

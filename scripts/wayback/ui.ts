@@ -3,7 +3,7 @@ import { CustomForm, DropdownItemData, ObservableBoolean, ObservableNumber, Obse
 import { ObservableLocation } from "../const/ui";
 import { WaybackManager } from "./manager";
 import { Wayback, WaybackCreateOptions } from "../const/manager";
-import { playerAddLocatorBar, playerAddWayback, playerRefreshWayback } from "./locator";
+import { playerAddLocatorBar, playerAddWayback, playerClearWayback, playerRefreshWayback } from "./locator";
 import { locatorIcons } from "../const/icons";
 import { colors } from "../const/colors";
 import { ComputedBoolean, ComputedString, sanitizeNumber } from "../utils/ui";
@@ -143,27 +143,23 @@ function showEditWaybackUI(player: Player, wayback: Wayback) {
   );
   form.toggle("Visible", $toggleVisibility);
 
+  form.spacer();
+
   form.button("Save and Quit", () => {
     if ($saveButtonDisabled.getData()) return;
-    wayback.location = {
+    
+    const intLoc = {
       x: Number($locationDimension.x.getData()),
       y: Number($locationDimension.y.getData()),
       z: Number($locationDimension.z.getData()),
-    };
+    }
 
-    wayback.dimension = dimensionList[$dimensionSelector.getData()];
-
-    wayback.appearance.icon = $iconSelector.getData();
-    wayback.appearance.color = $colorSelector.getData();
+    if (isNaN(intLoc.x) || isNaN(intLoc.y) || isNaN(intLoc.z)) return;
 
     const manager = new WaybackManager(player);
     manager.update(wayback.id, {
       label: $name.getData(),
-      location: {
-        x: Number($locationDimension.x.getData()),
-        y: Number($locationDimension.y.getData()),
-        z: Number($locationDimension.z.getData()),
-      },
+      location: intLoc,
       dimension: dimensionList[$dimensionSelector.getData()],
       appearance: {
         icon: $iconSelector.getData(),
@@ -179,17 +175,12 @@ function showEditWaybackUI(player: Player, wayback: Wayback) {
     disabled: $saveButtonDisabled,
   });
 
-  form.divider();
-
   form.button("Delete", () => {
     const manager = new WaybackManager(player);
 
     manager.remove(wayback.id);
 
-    form.close();
-  });
-
-  form.button("Cancel", () => {
+    system.run(() => playerClearWayback(player));
     form.close();
   });
 
@@ -312,15 +303,22 @@ function registerCreate(player: Player, form: CustomForm, state: UIState) {
   form.dropdown("Appearance:", $iconSelector, iconList, { description: "Locator Bar Icon", visible: state.create });
   form.dropdown("", $colorSelector, colorList, { description: "Waypoint Color", visible: state.create });
   
+  form.spacer({ visible: state.create });
+
   form.button("Save and Quit", () => {
     if ($saveButtonDisabled.getData()) return;
+
+    const intLoc = {
+      x: Number($locationDimension.x.getData()),
+      y: Number($locationDimension.y.getData()),
+      z: Number($locationDimension.z.getData()),
+    }
+
+    if (isNaN(intLoc.x) || isNaN(intLoc.y) || isNaN(intLoc.z)) return;
+
     const options: WaybackCreateOptions = {
       label: $name.getData(),
-      location: {
-        x: Number($locationDimension.x.getData()),
-        y: Number($locationDimension.y.getData()),
-        z: Number($locationDimension.z.getData()),
-      },
+      location: intLoc,
       dimension: dimensionList[$dimensionSelector.getData()],
       appearance: {
         icon: $iconSelector.getData(),
@@ -333,9 +331,8 @@ function registerCreate(player: Player, form: CustomForm, state: UIState) {
     
     playerAddWayback(player, wayback);
     form.close();
-  }, { visible: state.create });
+  }, { visible: state.create, disabled: new ComputedBoolean(() => $saveButtonDisabled.getData()) });
   
-  form.divider({ visible: state.create });
   form.button("Back", () => state.navigate(UIWaybackState.Manage), { visible: state.create });
 }
 
@@ -351,6 +348,8 @@ function registerManage(player: Player, form: CustomForm, state: UIState) {
 
   const isAllVisible = waybacks.every(wayback => wayback.appearance.visible);
   const $toggleVisibilityAll = new ObservableBoolean(isAllVisible, { clientWritable: true });
+  const $buttonDeleteAllMsg = new ObservableString("Delete All");
+  const $buttonDeleteAllState = new ObservableNumber(0);
 
   form.spacer({ visible: state.manage });
 
@@ -362,9 +361,28 @@ function registerManage(player: Player, form: CustomForm, state: UIState) {
       manager.update(wayback.id, { appearance: wayback.appearance });
     }
 
-    playerRefreshWayback(player);
+    system.run(() => playerRefreshWayback(player))
   });
   
+  form.divider({ visible: state.manage });
+  form.button($buttonDeleteAllMsg, () => {
+    $buttonDeleteAllState.setData($buttonDeleteAllState.getData()+1);
+    switch ($buttonDeleteAllState.getData()) {
+      case 1:
+        $buttonDeleteAllMsg.setData("Are you sure?");
+        break;
+      case 2:
+        $buttonDeleteAllMsg.setData("Are you REALLY sure?");
+        break;
+      case 3:
+        waybacks.forEach(wayback => manager.remove(wayback.id));
+        system.run(() => playerClearWayback(player))
+        form.close();
+        break;
+    }
+  }, { visible: state.manage, disabled: waybacks.length < 1 });
+  form.divider({ visible: state.manage });
+
   if (waybacks.length > 0) {
     for (let i = 0; i < maxElementsPerPage; i++) {
       const getWayback = () => {
