@@ -333,7 +333,7 @@ function registerCreate(player: Player, form: CustomForm, state: UIState) {
     form.close();
   }, { visible: state.create, disabled: new ComputedBoolean(() => $saveButtonDisabled.getData()) });
   
-  form.button("Back", () => state.navigate(UIWaybackState.Manage), { visible: state.create });
+  form.button("Back", () => state.navigate(UIWaybackState.Home), { visible: state.create });
 }
 
 function registerManage(player: Player, form: CustomForm, state: UIState) {
