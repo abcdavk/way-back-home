@@ -1,4 +1,4 @@
-import { DimensionLocation, LocationWaypoint, Player, TextPrimitive, WaypointTextureSelector, world } from "@minecraft/server";
+import { DimensionLocation, LocationWaypoint, Player, system, TextPrimitive, WaypointTextureSelector, world } from "@minecraft/server";
 import { Wayback } from "../const/manager";
 import { playerLocatorBars } from "../const/locator";
 import { WaybackManager } from "./manager";
@@ -29,8 +29,15 @@ function getLocatorLetter(label: string): string {
 export function playerRefreshWayback(player: Player) {
   const manager = new WaybackManager(player);
   for (const wayback of manager.getAll()) {
-    playerAddWayback(player, wayback);
+    playerLocatorBars.delete(player.id);
+    playerClearWayback(player);
+    system.run(() => playerAddWayback(player, wayback));
   }
+}
+
+export function playerClearWayback(player: Player) {
+  playerClearFloatingText(player);
+  playerClearLocator(player);
 }
 
 export function playerAddWayback(player: Player, wayback: Wayback) {
@@ -109,57 +116,60 @@ export function playerAddLocatorBar(player: Player, wayback: Wayback) {
   player.locatorBar.addWaypoint(waypoint);
 }
 
-export function playerRemoveLocatorBar(player: Player, wayback: Wayback) {
-  const dimension = world.getDimension(wayback.dimension);
+// export function playerRemoveLocatorBar(player: Player, wayback: Wayback) {
+//   const dimension = world.getDimension(wayback.dimension);
 
-  const dimesionLocation: DimensionLocation = {
-    dimension,
-    x: wayback.location.x,
-    y: wayback.location.y,
-    z: wayback.location.z,
-  }
+//   const dimesionLocation: DimensionLocation = {
+//     dimension,
+//     x: wayback.location.x,
+//     y: wayback.location.y,
+//     z: wayback.location.z,
+//   }
 
-  const textureSelector: WaypointTextureSelector = {
-    textureBoundsList: [
-      {
-        lowerBound: 0,
-        texture: {
-          iconHeight: 1,
-          iconWidth: 1,
-          path: getLocatorBarIconPath(wayback.label, wayback.appearance.icon, wayback.appearance.color),
-        }
-      }
-    ]
-  };
+//   const textureSelector: WaypointTextureSelector = {
+//     textureBoundsList: [
+//       {
+//         lowerBound: 0,
+//         texture: {
+//           iconHeight: 1,
+//           iconWidth: 1,
+//           path: getLocatorBarIconPath(wayback.label, wayback.appearance.icon, wayback.appearance.color),
+//         }
+//       }
+//     ]
+//   };
 
-  const waypoint = new LocationWaypoint(
-    dimesionLocation,
-    textureSelector,
-    { red: 1, green: 0, blue: 0 }
-  );
+//   const waypoint = new LocationWaypoint(
+//     dimesionLocation,
+//     textureSelector,
+//     { red: 1, green: 0, blue: 0 }
+//   );
 
-  const locatorBars = playerLocatorBars.get(player.id);
-  if (locatorBars === undefined) return;
-  if (locatorBars) {
-    if (locatorBars.find(v => v === wayback.id)) {
-      console.log("Waypoint not found.")
-      return false;
-    } else {
-      const index = locatorBars.findIndex(v => v === wayback.id);
+//   const locatorBars = playerLocatorBars.get(player.id);
+//   if (locatorBars === undefined) return;
+//   if (locatorBars) {
+//     if (locatorBars.find(v => v === wayback.id)) {
+//       console.log("Waypoint not found.")
+//       return false;
+//     } else {
+//       const index = locatorBars.findIndex(v => v === wayback.id);
 
-      if (index === -1) {
-        return false;
-      }
+//       if (index === -1) {
+//         return false;
+//       }
 
-      locatorBars.splice(index, 1);
-      playerLocatorBars.set(player.id, locatorBars);
-    }
-  }
+//       locatorBars.splice(index, 1);
+//       playerLocatorBars.set(player.id, locatorBars);
+//     }
+//   }
 
-  player.locatorBar.removeWaypoint(waypoint);
+//   player.locatorBar.removeWaypoint(waypoint);
+// }
+
+export function playerClearFloatingText(player: Player) {
+  world.primitiveShapesManager.removeAll();
 }
 
 export function playerClearLocator(player: Player) {
   player.locatorBar.removeAllWaypoints();
-  playerLocatorBars.delete(player.id);
 }

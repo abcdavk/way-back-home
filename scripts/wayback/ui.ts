@@ -3,7 +3,7 @@ import { CustomForm, DropdownItemData, ObservableBoolean, ObservableNumber, Obse
 import { ObservableLocation } from "../const/ui";
 import { WaybackManager } from "./manager";
 import { Wayback, WaybackCreateOptions } from "../const/manager";
-import { playerAddLocatorBar, playerAddWayback } from "./locator";
+import { playerAddLocatorBar, playerAddWayback, playerRefreshWayback } from "./locator";
 import { locatorIcons } from "../const/icons";
 import { colors } from "../const/colors";
 import { ComputedBoolean, ComputedString, sanitizeNumber } from "../utils/ui";
@@ -171,6 +171,8 @@ function showEditWaybackUI(player: Player, wayback: Wayback) {
         visible: $toggleVisibility.getData(),
       }
     });
+
+    system.run(() => playerRefreshWayback(player));
 
     form.close();
   }, {
@@ -346,10 +348,22 @@ function registerManage(player: Player, form: CustomForm, state: UIState) {
   const totalPages = Math.max(0, Math.ceil(waybacks.length / maxElementsPerPage) - 1);
   
   const $pageSelector = new ObservableNumber(0, { clientWritable: true });
-  
-  form.slider("Page", $pageSelector, 0, totalPages, {  visible: state.manage });
+
+  const isAllVisible = waybacks.every(wayback => wayback.appearance.visible);
+  const $toggleVisibilityAll = new ObservableBoolean(isAllVisible, { clientWritable: true });
 
   form.spacer({ visible: state.manage });
+
+  form.toggle("Visible All Waypoints", $toggleVisibilityAll, { visible: state.manage });
+
+  $toggleVisibilityAll.subscribe((data) => {
+    for (const wayback of waybacks) {
+      wayback.appearance.visible = data;
+      manager.update(wayback.id, { appearance: wayback.appearance });
+    }
+
+    playerRefreshWayback(player);
+  });
   
   if (waybacks.length > 0) {
     for (let i = 0; i < maxElementsPerPage; i++) {
@@ -372,13 +386,14 @@ function registerManage(player: Player, form: CustomForm, state: UIState) {
         {
           visible: state.manage,
           disabled: new ComputedBoolean(() => getWayback() === undefined),
-          tooltip: `Location: ${getWayback().location.x} ${getWayback().location.y} ${getWayback().location.z}`
+          tooltip: new ComputedString(() => { if (getWayback() !== undefined) return `Location: ${getWayback().location.x} ${getWayback().location.y} ${getWayback().location.z}\nVisible: ${getWayback().appearance.visible}`; else return "" })
         }
       );
     }
   }
   
-  
+  form.slider("Page", $pageSelector, 0, totalPages, {  visible: state.manage });
+  form.spacer({ visible: state.manage });
   form.button("Back", () => state.navigate(UIWaybackState.Home), { visible: state.manage });
 }
 
