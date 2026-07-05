@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Upravit navigační bod
+wbh.ui.waypointName=Název navigačního bodu
+wbh.ui.setHere=Nastavit zde
+
+wbh.ui.appearance=Vzhled:
+wbh.ui.locatorBarIcon=Ikona lokátoru
+wbh.ui.waypointColor=Barva bodu
+
+wbh.ui.visible=Viditelné
+
+wbh.ui.saveAndQuit=Uložit a ukončit
+wbh.ui.delete=Smazat
+wbh.ui.back=Zpět
+wbh.ui.page=stránku
+
+wbh.ui.createWaypoint=Vytvořte bod na cestě
+wbh.ui.manageWaypoint=Správa navigačního bodu
+wbh.ui.waypointName=Název navigačního bodu
+wbh.ui.visibleAllWaypoint=Viditelné všechny trasové body

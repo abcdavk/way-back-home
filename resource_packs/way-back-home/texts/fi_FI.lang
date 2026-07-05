@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Muokkaa reittipistettä
+wbh.ui.waypointName=Reittipisteen nimi
+wbh.ui.setHere=Aseta tähän
+
+wbh.ui.appearance=Ulkonäkö:
+wbh.ui.locatorBarIcon=Paikanninpalkin kuvake
+wbh.ui.waypointColor=Reittipisteen väri
+
+wbh.ui.visible=Näkyy
+
+wbh.ui.saveAndQuit=Tallenna ja lopeta
+wbh.ui.delete=Poista
+wbh.ui.back=Takaisin
+wbh.ui.page=Sivu
+
+wbh.ui.createWaypoint=Luo reittipiste
+wbh.ui.manageWaypoint=Hallitse reittipistettä
+wbh.ui.waypointName=Reittipisteen nimi
+wbh.ui.visibleAllWaypoint=Näkyvät kaikki reittipisteet

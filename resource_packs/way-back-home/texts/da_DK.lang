@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Rediger waypoint
+wbh.ui.waypointName=Waypoint navn
+wbh.ui.setHere=Sæt her
+
+wbh.ui.appearance=Udseende:
+wbh.ui.locatorBarIcon=Søgelinjeikon
+wbh.ui.waypointColor=Waypoint farve
+
+wbh.ui.visible=Synlig
+
+wbh.ui.saveAndQuit=Gem og Afslut
+wbh.ui.delete=Slet
+wbh.ui.back=Tilbage
+wbh.ui.page=Side
+
+wbh.ui.createWaypoint=Opret et waypoint
+wbh.ui.manageWaypoint=Administrer waypoint
+wbh.ui.waypointName=Waypoint navn
+wbh.ui.visibleAllWaypoint=Synlige alle waypoints

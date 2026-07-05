@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Waypoint bewerken
+wbh.ui.waypointName=Waypoint-naam
+wbh.ui.setHere=Stel hier in
+
+wbh.ui.appearance=Uiterlijk:
+wbh.ui.locatorBarIcon=Locatiebalkpictogram
+wbh.ui.waypointColor=Waypoint-kleur
+
+wbh.ui.visible=Zichtbaar
+
+wbh.ui.saveAndQuit=Opslaan en afsluiten
+wbh.ui.delete=Verwijderen
+wbh.ui.back=Terug
+wbh.ui.page=Pagina
+
+wbh.ui.createWaypoint=Waypoint maken
+wbh.ui.manageWaypoint=Beheer Waypoint
+wbh.ui.waypointName=Waypoint-naam
+wbh.ui.visibleAllWaypoint=Zichtbaar alle waypoints

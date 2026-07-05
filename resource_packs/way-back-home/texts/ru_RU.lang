@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Редактировать маршрутную точку
+wbh.ui.waypointName=Имя маршрутной точки
+wbh.ui.setHere=Установить здесь
+
+wbh.ui.appearance=Внешний вид:
+wbh.ui.locatorBarIcon=Значок панели локатора
+wbh.ui.waypointColor=Цвет маршрутной точки
+
+wbh.ui.visible=Видимый
+
+wbh.ui.saveAndQuit=Сохранить и выйти
+wbh.ui.delete=Удалить
+wbh.ui.back=Назад
+wbh.ui.page=Страница
+
+wbh.ui.createWaypoint=Создать путевую точку
+wbh.ui.manageWaypoint=Управление путевой точкой
+wbh.ui.waypointName=Имя маршрутной точки
+wbh.ui.visibleAllWaypoint=Видимые все путевые точки

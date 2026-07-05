@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Edytuj punkt orientacyjny
+wbh.ui.waypointName=Nazwa punktu trasy
+wbh.ui.setHere=Ustaw tutaj
+
+wbh.ui.appearance=Wygląd:
+wbh.ui.locatorBarIcon=Ikona paska lokalizatora
+wbh.ui.waypointColor=Kolor punktu orientacyjnego
+
+wbh.ui.visible=Widoczne
+
+wbh.ui.saveAndQuit=Zapisz i wyjdź
+wbh.ui.delete=Usuń
+wbh.ui.back=Powrót
+wbh.ui.page=Strona
+
+wbh.ui.createWaypoint=Utwórz punkt orientacyjny
+wbh.ui.manageWaypoint=Zarządzaj punktem orientacyjnym
+wbh.ui.waypointName=Nazwa punktu trasy
+wbh.ui.visibleAllWaypoint=Widoczne wszystkie punkty trasy

@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Modifier le point de cheminement
+wbh.ui.waypointName=Nom du point de cheminement
+wbh.ui.setHere=Définir ici
+
+wbh.ui.appearance=Apparence :
+wbh.ui.locatorBarIcon=Icône de la barre de localisation
+wbh.ui.waypointColor=Couleur du point de cheminement
+
+wbh.ui.visible=Visible
+
+wbh.ui.saveAndQuit=Enregistrer et quitter
+wbh.ui.delete=Supprimer
+wbh.ui.back=Retour
+wbh.ui.page=Pages
+
+wbh.ui.createWaypoint=Créer un point de cheminement
+wbh.ui.manageWaypoint=Gérer le point de cheminement
+wbh.ui.waypointName=Nom du point de cheminement
+wbh.ui.visibleAllWaypoint=Visible tous les waypoints

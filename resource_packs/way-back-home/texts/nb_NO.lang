@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Rediger veipunkt
+wbh.ui.waypointName=Navn på veipunkt
+wbh.ui.setHere=Sett her
+
+wbh.ui.appearance=Utseende:
+wbh.ui.locatorBarIcon=Ikon for lokaliseringslinje
+wbh.ui.waypointColor=Veipunktfarge
+
+wbh.ui.visible=Synlig
+
+wbh.ui.saveAndQuit=Lagre og avslutt
+wbh.ui.delete=Slett
+wbh.ui.back=Tilbake
+wbh.ui.page=Side
+
+wbh.ui.createWaypoint=Opprett veipunkt
+wbh.ui.manageWaypoint=Administrer veipunkt
+wbh.ui.waypointName=Navn på veipunkt
+wbh.ui.visibleAllWaypoint=Synlig alle veipunkter

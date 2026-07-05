@@ -1,0 +1,19 @@
+wbh.ui.editWaypoint=Sunting Titik Arah
+wbh.ui.waypointName=Nama Titik Jalan
+wbh.ui.setHere=Tetapkan di Sini
+
+wbh.ui.appearance=Penampilan:
+wbh.ui.locatorBarIcon=Ikon Bilah Pencari Lokasi
+wbh.ui.waypointColor=Warna Titik Arah
+
+wbh.ui.visible=Terlihat
+
+wbh.ui.saveAndQuit=Simpan dan Keluar
+wbh.ui.delete=Hapus
+wbh.ui.back=Kembali
+wbh.ui.page=Halaman
+
+wbh.ui.createWaypoint=Buat Titik Arah
+wbh.ui.manageWaypoint=Kelola Titik Arah
+wbh.ui.waypointName=Nama Titik Jalan
+wbh.ui.visibleAllWaypoint=Terlihat Semua Titik Arah
