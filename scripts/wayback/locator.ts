@@ -1,17 +1,21 @@
-import { DimensionLocation, LocationWaypoint, Player, system, TextPrimitive, WaypointTextureSelector, world } from "@minecraft/server";
+import {
+  DimensionLocation,
+  LocationWaypoint,
+  Player,
+  system,
+  TextPrimitive,
+  WaypointTextureSelector,
+  world,
+} from "@minecraft/server";
 import { Wayback } from "../const/manager";
-import { playerLocatorBars } from "../const/locator";
+import { MAX_FLOATING_TEXT_RD, playerLocatorBars } from "../const/locator";
 import { WaybackManager } from "./manager";
 import { colors, RGBA_TRANSPARENT } from "../const/colors";
 import { locatorIcons, locatorLetters } from "../const/icons";
 
-const playerFloatingTexts = new Map<string, TextPrimitive[]>
+const playerFloatingTexts = new Map<string, TextPrimitive[]>();
 
-export function getLocatorBarIconPath(
-  label: string,
-  icon: number,
-  color: number,
-) {
+export function getLocatorBarIconPath(label: string, icon: number, color: number) {
   if (icon === 0) {
     const letter = getLocatorLetter(label);
     return `textures/locator/letters/${letter}/${color}`;
@@ -23,9 +27,7 @@ export function getLocatorBarIconPath(
 function getLocatorLetter(label: string): string {
   const letter = label.trim().charAt(0).toUpperCase();
 
-  return locatorLetters.indexOf(letter) !== -1
-    ? letter
-    : "@";
+  return locatorLetters.indexOf(letter) !== -1 ? letter : "@";
 }
 
 export function playerRefreshWayback(player: Player) {
@@ -51,26 +53,32 @@ export function playerAddWayback(player: Player, wayback: Wayback) {
 export function playerAddFloatingText(player: Player, wayback: Wayback) {
   const dimension = world.getDimension(wayback.dimension);
 
-  const waybackIcon = new TextPrimitive({
-    dimension,
-    x: wayback.location.x,
-    y: wayback.location.y + 1,
-    z: wayback.location.z,
-  }, wayback.label.charAt(0).toUpperCase());
-  waybackIcon.visibleTo = [ player ];
+  const waybackIcon = new TextPrimitive(
+    {
+      dimension,
+      x: wayback.location.x,
+      y: wayback.location.y + 1,
+      z: wayback.location.z,
+    },
+    wayback.label.charAt(0).toUpperCase()
+  );
+  waybackIcon.visibleTo = [player];
   waybackIcon.scale = 2.5;
   waybackIcon.maximumRenderDistance = 64;
   waybackIcon.color = colors[wayback.appearance.color].color;
   waybackIcon.backgroundColorOverride = colors[wayback.appearance.color].backgroundColor;
 
-  const waybackLabel = new TextPrimitive({
-    dimension,
-    x: wayback.location.x,
-    y: wayback.location.y,
-    z: wayback.location.z,
-  }, wayback.label);
-  waybackLabel.visibleTo = [ player ];
-  waybackLabel.maximumRenderDistance = 24;
+  const waybackLabel = new TextPrimitive(
+    {
+      dimension,
+      x: wayback.location.x,
+      y: wayback.location.y,
+      z: wayback.location.z,
+    },
+    wayback.label
+  );
+  waybackLabel.visibleTo = [player];
+  waybackLabel.maximumRenderDistance = MAX_FLOATING_TEXT_RD;
   waybackLabel.backgroundColorOverride = RGBA_TRANSPARENT;
 
   world.primitiveShapesManager.addText(waybackIcon);
@@ -82,7 +90,7 @@ export function playerAddFloatingText(player: Player, wayback: Wayback) {
     floatingTexts.push(waybackLabel);
     playerFloatingTexts.set(player.id, floatingTexts);
   } else {
-    playerFloatingTexts.set(player.id, [ waybackIcon, waybackLabel ]);
+    playerFloatingTexts.set(player.id, [waybackIcon, waybackLabel]);
   }
 }
 
@@ -94,7 +102,7 @@ export function playerAddLocatorBar(player: Player, wayback: Wayback) {
     x: wayback.location.x,
     y: wayback.location.y,
     z: wayback.location.z,
-  }
+  };
 
   const textureSelector: WaypointTextureSelector = {
     textureBoundsList: [
@@ -104,23 +112,20 @@ export function playerAddLocatorBar(player: Player, wayback: Wayback) {
           iconHeight: 1,
           iconWidth: 1,
           path: getLocatorBarIconPath(wayback.label, wayback.appearance.icon, wayback.appearance.color),
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
-  const waypoint = new LocationWaypoint(
-    dimesionLocation,
-    textureSelector
-  );
+  const waypoint = new LocationWaypoint(dimesionLocation, textureSelector);
 
   const locatorBars = playerLocatorBars.get(player.id);
 
-  if (locatorBars === undefined) playerLocatorBars.set(player.id, [ wayback.id ]);
+  if (locatorBars === undefined) playerLocatorBars.set(player.id, [wayback.id]);
   if (locatorBars) {
-    if (locatorBars.find(v => v !== wayback.id)) {
+    if (locatorBars.find((v) => v !== wayback.id)) {
       locatorBars.push(wayback.id);
-      playerLocatorBars.set(player.id, locatorBars)
+      playerLocatorBars.set(player.id, locatorBars);
     }
   }
 
@@ -129,8 +134,8 @@ export function playerAddLocatorBar(player: Player, wayback: Wayback) {
 
 export function playerClearFloatingText(player: Player) {
   const floatingTexts = playerFloatingTexts.get(player.id);
-  if (floatingTexts === undefined) return
-  floatingTexts.forEach(text => world.primitiveShapesManager.removeText(text));    
+  if (floatingTexts === undefined) return;
+  floatingTexts.forEach((text) => world.primitiveShapesManager.removeText(text));
 }
 
 export function playerClearLocator(player: Player) {
