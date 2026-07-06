@@ -29,20 +29,17 @@ def recolor(image: Image.Image, target_color):
 
     tr, tg, tb = target_color
 
-    # Warna outline berdasarkan kontras
     luminance = 0.299 * tr + 0.587 * tg + 0.114 * tb
     if luminance > 128:
         outline = (0, 0, 0, 255)
     else:
         outline = (255, 255, 255, 255)
 
-    # Canvas baru (+1 pixel setiap sisi)
     result = Image.new("RGBA", (image.width + 2, image.height + 2), (0, 0, 0, 0))
 
     src = image.load()
     dst = result.load()
 
-    # Letakkan gambar di tengah sambil recolor
     for y in range(image.height):
         for x in range(image.width):
             r, g, b, a = src[x, y]
@@ -59,7 +56,6 @@ def recolor(image: Image.Image, target_color):
                 a,
             )
 
-    # Tambahkan border 1 pixel
     for y in range(image.height):
         for x in range(image.width):
             if src[x, y][3] == 0:
