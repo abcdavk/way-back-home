@@ -1,8 +1,8 @@
 from pathlib import Path
 from PIL import Image
 
-INPUT_DIR = Path("colorizer/letter")
-OUTPUT_DIR = Path("colorizer/letter_output")
+INPUT_DIR = Path("colorizer/icon")
+OUTPUT_DIR = Path("colorizer/icon_output")
 
 COLOR_LIST = [
     {"id": 0, "display": "Black", "color": (0, 0, 0)},
@@ -26,30 +26,65 @@ COLOR_LIST = [
 
 def recolor(image: Image.Image, target_color):
     image = image.convert("RGBA")
-    pixels = image.load()
 
     tr, tg, tb = target_color
 
+    # Warna outline berdasarkan kontras
+    luminance = 0.299 * tr + 0.587 * tg + 0.114 * tb
+    if luminance > 128:
+        outline = (0, 0, 0, 255)
+    else:
+        outline = (255, 255, 255, 255)
+
+    # Canvas baru (+1 pixel setiap sisi)
+    result = Image.new("RGBA", (image.width + 2, image.height + 2), (0, 0, 0, 0))
+
+    src = image.load()
+    dst = result.load()
+
+    # Letakkan gambar di tengah sambil recolor
     for y in range(image.height):
         for x in range(image.width):
-            r, g, b, a = pixels[x, y]
+            r, g, b, a = src[x, y]
 
             if a == 0:
                 continue
 
-            # Brightness 0..1
             brightness = (r + g + b) / (255 * 3)
 
-            pixels[x, y] = (
+            dst[x + 1, y + 1] = (
                 int(tr * brightness),
                 int(tg * brightness),
                 int(tb * brightness),
                 a,
             )
 
-    return image
+    # Tambahkan border 1 pixel
+    for y in range(image.height):
+        for x in range(image.width):
+            if src[x, y][3] == 0:
+                continue
 
+            cx = x + 1
+            cy = y + 1
 
+            for dx, dy in (
+                (-1, 0),
+                (1, 0),
+                (0, -1),
+                (0, 1),
+                (-1, -1),
+                (1, -1),
+                (-1, 1),
+                (1, 1),
+            ):
+                nx = cx + dx
+                ny = cy + dy
+
+                if dst[nx, ny][3] == 0:
+                    dst[nx, ny] = outline
+
+    return result
 for png in INPUT_DIR.glob("*.png"):
     image = Image.open(png)
 

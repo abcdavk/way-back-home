@@ -6,7 +6,7 @@
     "uuid": "0e21d1c9-fac6-44bd-a1f7-e1416ae25562",
     "version": [
       1,
-      0,
+      1,
       0
     ],
     "min_engine_version": [
@@ -20,7 +20,7 @@
       "description": "Behavior",
       "version": [
         1,
-        0,
+        1,
         0
       ],
       "uuid": "2aacbb09-1363-4e42-aa82-8112996b9dfc",
@@ -44,7 +44,7 @@
       "uuid": "b8780a49-a93f-44ae-acd9-203fcf5e533f",
       "version": [
         1,
-        0,
+        1,
         0
       ]
     },

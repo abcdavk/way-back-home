@@ -1,7 +1,8 @@
-import { world, LocationWaypoint, WaypointTextureSelector, WaypointTexture, Player, PlayerWaypoint, system, Vector3 } from "@minecraft/server"
+import { world, system } from "@minecraft/server";
 import { waybackCommandHandler, waybackCustomCommand } from "./wayback/command";
 import { playerRefreshWayback } from "./wayback/locator";
-
+// import "./debug/spawnWaypointIcon";
+// import "./debug/spawnWaypointLetter";
 system.run(() => {
   for (const player of world.getPlayers()) {
     playerRefreshWayback(player);
