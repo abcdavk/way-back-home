@@ -39,6 +39,10 @@
       "entry": "scripts/main.js"
     }
   ],
+  "metadata": {
+    "authors": ["abcdave"],
+    "product_type": "addon"
+  },
   "dependencies": [
     {
       "uuid": "b8780a49-a93f-44ae-acd9-203fcf5e533f",
