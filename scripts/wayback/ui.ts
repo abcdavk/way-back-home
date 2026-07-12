@@ -29,6 +29,9 @@ function showEditWaybackUI(player: Player, wayback: Wayback) {
 
   const $toggleVisibility = new ObservableBoolean(wayback.appearance.visible, { clientWritable: true });
 
+  const floatingText = wayback.appearance.floatingText ?? true;
+  const $toggleFloatingText = new ObservableBoolean(floatingText, { clientWritable: true });
+
   const $name = new ObservableString(wayback.label, { clientWritable: true });
   $name.subscribe((data) => {
     $saveButtonDisabled.setData(data.length < 1);
@@ -137,6 +140,7 @@ function showEditWaybackUI(player: Player, wayback: Wayback) {
     description: { translate: "wbh.ui.waypointColor" },
   });
   form.toggle({ translate: "wbh.ui.visible" }, $toggleVisibility);
+  form.toggle({ translate: "wbh.ui.floatingText" }, $toggleFloatingText);
 
   form.spacer();
 
@@ -162,6 +166,7 @@ function showEditWaybackUI(player: Player, wayback: Wayback) {
           icon: $iconSelector.getData(),
           color: $colorSelector.getData(),
           visible: $toggleVisibility.getData(),
+          floatingText: $toggleFloatingText.getData(),
         },
       });
 
@@ -338,6 +343,7 @@ function registerCreate(player: Player, form: CustomForm, state: UIState) {
           icon: $iconSelector.getData(),
           color: $colorSelector.getData(),
           visible: true,
+          floatingText: true,
         },
       };
       const manager = new WaybackManager(player);

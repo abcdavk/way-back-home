@@ -6,7 +6,8 @@ wbh.ui.appearance=Внешний вид:
 wbh.ui.locatorBarIcon=Значок панели локатора
 wbh.ui.waypointColor=Цвет маршрутной точки
 
-wbh.ui.visible=Видимый
+wbh.ui.visible=Видимая панель локатора
+wbh.ui.floatingText=Видимый плавающий текст
 
 wbh.ui.saveAndQuit=Сохранить и выйти
 wbh.ui.delete=Удалить
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Создать путевую точку
 wbh.ui.manageWaypoint=Управление путевой точкой
 wbh.ui.waypointName=Имя маршрутной точки
 wbh.ui.visibleAllWaypoint=Видимые все путевые точки
+

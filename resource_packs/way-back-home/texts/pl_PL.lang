@@ -6,7 +6,8 @@ wbh.ui.appearance=Wygląd:
 wbh.ui.locatorBarIcon=Ikona paska lokalizatora
 wbh.ui.waypointColor=Kolor punktu orientacyjnego
 
-wbh.ui.visible=Widoczne
+wbh.ui.visible=Widoczny pasek lokalizatora
+wbh.ui.floatingText=Widoczny pływający tekst
 
 wbh.ui.saveAndQuit=Zapisz i wyjdź
 wbh.ui.delete=Usuń
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Utwórz punkt orientacyjny
 wbh.ui.manageWaypoint=Zarządzaj punktem orientacyjnym
 wbh.ui.waypointName=Nazwa punktu trasy
 wbh.ui.visibleAllWaypoint=Widoczne wszystkie punkty trasy
+

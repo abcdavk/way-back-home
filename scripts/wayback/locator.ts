@@ -45,9 +45,10 @@ export function playerClearWayback(player: Player) {
 }
 
 export function playerAddWayback(player: Player, wayback: Wayback) {
-  if (!wayback.appearance.visible) return;
-  playerAddLocatorBar(player, wayback);
-  playerAddFloatingText(player, wayback);
+  if (wayback.appearance.visible) playerAddLocatorBar(player, wayback);
+
+  const floatingText = wayback.appearance.floatingText ?? true;
+  if (floatingText) playerAddFloatingText(player, wayback);
 }
 
 export function playerAddFloatingText(player: Player, wayback: Wayback) {

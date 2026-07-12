@@ -6,7 +6,8 @@ wbh.ui.appearance=Görünüm:
 wbh.ui.locatorBarIcon=Konum Belirleyici Çubuğu Simgesi
 wbh.ui.waypointColor=Yol Noktası Rengi
 
-wbh.ui.visible=Görünür
+wbh.ui.visible=Görünür Konum Belirleme Çubuğu
+wbh.ui.floatingText=Görünür Kayan Metin
 
 wbh.ui.saveAndQuit=Kaydet ve Çık
 wbh.ui.delete=Sil
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Yol Noktası Oluştur
 wbh.ui.manageWaypoint=Yol Noktasını Yönet
 wbh.ui.waypointName=Yol Noktası Adı
 wbh.ui.visibleAllWaypoint=Tüm Yol Noktalarını Görünür
+

@@ -6,7 +6,8 @@ wbh.ui.appearance=Vzhľad:
 wbh.ui.locatorBarIcon=Ikona lokátora
 wbh.ui.waypointColor=Farba bodu
 
-wbh.ui.visible=Viditeľné
+wbh.ui.visible=Viditeľná lokačná lišta
+wbh.ui.floatingText=Viditeľný plávajúci text
 
 wbh.ui.saveAndQuit=Uložiť a ukončiť
 wbh.ui.delete=Odstrániť
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Vytvorte trasový bod
 wbh.ui.manageWaypoint=Spravovať trasový bod
 wbh.ui.waypointName=Názov trasového bodu
 wbh.ui.visibleAllWaypoint=Viditeľné všetky trasové body
+

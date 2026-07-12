@@ -1,6 +1,6 @@
 import { Vector3 } from "@minecraft/server";
 
-export const WAYBACK_PROPERTY = "wbh:waybacks"
+export const WAYBACK_PROPERTY = "wbh:waybacks";
 
 export interface Wayback {
   id: string;
@@ -13,8 +13,9 @@ export interface Wayback {
 
 export interface WaybackAppearance {
   icon: number;
-  color: number
+  color: number;
   visible: boolean;
+  floatingText?: boolean;
 }
 
 export interface WaybackCreateOptions {

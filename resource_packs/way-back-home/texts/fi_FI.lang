@@ -6,7 +6,8 @@ wbh.ui.appearance=Ulkonäkö:
 wbh.ui.locatorBarIcon=Paikanninpalkin kuvake
 wbh.ui.waypointColor=Reittipisteen väri
 
-wbh.ui.visible=Näkyy
+wbh.ui.visible=Näkyvä paikannuspalkki
+wbh.ui.floatingText=Näkyvä kelluva teksti
 
 wbh.ui.saveAndQuit=Tallenna ja lopeta
 wbh.ui.delete=Poista
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Luo reittipiste
 wbh.ui.manageWaypoint=Hallitse reittipistettä
 wbh.ui.waypointName=Reittipisteen nimi
 wbh.ui.visibleAllWaypoint=Näkyvät kaikki reittipisteet
+

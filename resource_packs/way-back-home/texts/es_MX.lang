@@ -1,12 +1,13 @@
 wbh.ui.editWaypoint=Editar punto de ruta
-wbh.ui.waypointName=Nombre del punto de referencia
+wbh.ui.waypointName=Nombre del punto de ruta
 wbh.ui.setHere=Establecer aquí
 
 wbh.ui.appearance=Apariencia:
 wbh.ui.locatorBarIcon=Icono de la barra de localización
-wbh.ui.waypointColor=Color del punto de ruta
+wbh.ui.waypointColor=Color del punto de referencia
 
-wbh.ui.visible=Visibles
+wbh.ui.visible=Barra de localización visible
+wbh.ui.floatingText=Texto flotante visible
 
 wbh.ui.saveAndQuit=Guardar y salir
 wbh.ui.delete=Eliminar
@@ -14,6 +15,7 @@ wbh.ui.back=Atrás
 wbh.ui.page=Página
 
 wbh.ui.createWaypoint=Crear punto de referencia
-wbh.ui.manageWaypoint=Administrar punto de ruta
-wbh.ui.waypointName=Nombre del punto de referencia
+wbh.ui.manageWaypoint=Administrar punto de referencia
+wbh.ui.waypointName=Nombre del punto de ruta
 wbh.ui.visibleAllWaypoint=Visible todos los puntos de referencia
+

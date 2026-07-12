@@ -6,7 +6,8 @@ wbh.ui.appearance=Megjelenés:
 wbh.ui.locatorBarIcon=Keresősáv ikon
 wbh.ui.waypointColor=Útpont színe
 
-wbh.ui.visible=Látható
+wbh.ui.visible=Látható keresősáv
+wbh.ui.floatingText=Látható lebegő szöveg
 
 wbh.ui.saveAndQuit=Mentés és kilépés
 wbh.ui.delete=Törölje
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Útpont létrehozása
 wbh.ui.manageWaypoint=Útpont kezelése
 wbh.ui.waypointName=Útpont neve
 wbh.ui.visibleAllWaypoint=Minden útpont látható
+

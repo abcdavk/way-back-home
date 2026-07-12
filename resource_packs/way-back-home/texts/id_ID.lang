@@ -6,7 +6,8 @@ wbh.ui.appearance=Penampilan:
 wbh.ui.locatorBarIcon=Ikon Bilah Pencari Lokasi
 wbh.ui.waypointColor=Warna Titik Arah
 
-wbh.ui.visible=Terlihat
+wbh.ui.visible=Bilah Pencari Lokasi yang Terlihat
+wbh.ui.floatingText=Teks Mengambang yang Terlihat
 
 wbh.ui.saveAndQuit=Simpan dan Keluar
 wbh.ui.delete=Hapus
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Buat Titik Arah
 wbh.ui.manageWaypoint=Kelola Titik Arah
 wbh.ui.waypointName=Nama Titik Jalan
 wbh.ui.visibleAllWaypoint=Terlihat Semua Titik Arah
+

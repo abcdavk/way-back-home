@@ -6,14 +6,16 @@ wbh.ui.appearance=Utseende:
 wbh.ui.locatorBarIcon=Ikon för lokaliseringsfält
 wbh.ui.waypointColor=Waypoint färg
 
-wbh.ui.visible=Synlig
+wbh.ui.visible=Synlig lokaliseringsfält
+wbh.ui.floatingText=Synlig flytande text
 
 wbh.ui.saveAndQuit=Spara och avsluta
 wbh.ui.delete=Ta bort
 wbh.ui.back=Tillbaka
-wbh.ui.page=Sida
+wbh.ui.page=sida
 
 wbh.ui.createWaypoint=Skapa waypoint
 wbh.ui.manageWaypoint=Hantera waypoint
 wbh.ui.waypointName=Waypoint namn
 wbh.ui.visibleAllWaypoint=Synlig alla waypoints
+

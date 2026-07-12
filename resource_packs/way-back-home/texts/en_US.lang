@@ -6,7 +6,8 @@ wbh.ui.appearance=Appearance:
 wbh.ui.locatorBarIcon=Locator Bar Icon
 wbh.ui.waypointColor=Waypoint Color
 
-wbh.ui.visible=Visible
+wbh.ui.visible=Visible Locator Bar
+wbh.ui.floatingText=Visible Floating Text
 
 wbh.ui.saveAndQuit=Save and Quit
 wbh.ui.delete=Delete
@@ -17,3 +18,4 @@ wbh.ui.createWaypoint=Create Waypoint
 wbh.ui.manageWaypoint=Manage Waypoint
 wbh.ui.waypointName=Waypoint Name
 wbh.ui.visibleAllWaypoint=Visible All Waypoints
+

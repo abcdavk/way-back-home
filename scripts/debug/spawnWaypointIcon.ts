@@ -21,6 +21,7 @@ world.afterEvents.itemUse.subscribe(({ source: player, itemStack }) => {
         icon: j,
         color: Math.floor(Math.random() * 16), // 0-15
         visible: true,
+        floatingText: true,
       },
     };
 
