@@ -6,8 +6,8 @@
     "uuid": "b8780a49-a93f-44ae-acd9-203fcf5e533f",
     "version": [
       1,
-      1,
-      0
+      2,
+      2
     ],
     "min_engine_version": [
       1,
@@ -22,8 +22,8 @@
       "uuid": "523d72d2-3ba9-498a-bc63-8beb5fe268cb",
       "version": [
         1,
-        1,
-        0
+        2,
+        2
       ]
     }
   ],
@@ -32,8 +32,8 @@
       "uuid": "0e21d1c9-fac6-44bd-a1f7-e1416ae25562",
       "version": [
         1,
-        1,
-        0
+        2,
+        2
       ]
     }
   ],
