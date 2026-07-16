@@ -1,0 +1,21 @@
+wbh.ui.editWaypoint=Yol Noktasını Düzenle
+wbh.ui.waypointName=Yol Noktası Adı
+wbh.ui.setHere=Buradan Ayarla
+
+wbh.ui.appearance=Görünüm:
+wbh.ui.locatorBarIcon=Konum Belirleyici Çubuğu Simgesi
+wbh.ui.waypointColor=Yol Noktası Rengi
+
+wbh.ui.visible=Görünür Konum Belirleme Çubuğu
+wbh.ui.floatingText=Görünür Kayan Metin
+
+wbh.ui.saveAndQuit=Kaydet ve Çık
+wbh.ui.delete=Sil
+wbh.ui.back=Geri
+wbh.ui.page=Sayfa
+
+wbh.ui.createWaypoint=Yol Noktası Oluştur
+wbh.ui.manageWaypoint=Yol Noktasını Yönet
+wbh.ui.waypointName=Yol Noktası Adı
+wbh.ui.visibleAllWaypoint=Tüm Yol Noktalarını Görünür
+

@@ -1,0 +1,21 @@
+wbh.ui.editWaypoint=웨이포인트 편집
+wbh.ui.waypointName=웨이포인트 이름
+wbh.ui.setHere=여기서 설정
+
+wbh.ui.appearance=외관:
+wbh.ui.locatorBarIcon=로케이터 바 아이콘
+wbh.ui.waypointColor=웨이포인트 색상
+
+wbh.ui.visible=보이는 위치 표시줄
+wbh.ui.floatingText=보이는 플로팅 텍스트
+
+wbh.ui.saveAndQuit=저장하고 종료
+wbh.ui.delete=삭제
+wbh.ui.back=뒤로
+wbh.ui.page=페이지
+
+wbh.ui.createWaypoint=웨이포인트 생성
+wbh.ui.manageWaypoint=웨이포인트 관리
+wbh.ui.waypointName=웨이포인트 이름
+wbh.ui.visibleAllWaypoint=모든 웨이포인트 표시
+

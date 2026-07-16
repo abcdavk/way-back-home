@@ -1,0 +1,72 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Way Back Home: Locator Bar and Waypoint | Realm Support",
+    "description": "by abcdave",
+    "uuid": "146eb4b9-6b50-4e34-b870-668bdff3d081",
+    "version": [
+      1,
+      2,
+      2
+    ],
+    "min_engine_version": [
+      1,
+      26,
+      30
+    ]
+  },
+  "modules": [
+    {
+      "description": "Behavior",
+      "version": [
+        1,
+        2,
+        2
+      ],
+      "uuid": "b9740862-cc83-4a62-ad3c-9d1ce288a5b4",
+      "type": "data"
+    },
+    {
+      "description": "Script resources",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "b22c48a7-3a89-410b-855f-683b713008d7",
+      "version": [
+        0,
+        0,
+        1
+      ],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "metadata": {
+    "authors": ["abcdave"],
+    "product_type": "addon"
+  },
+  "dependencies": [
+    {
+      "uuid": "fc97d1fd-21ef-4366-a524-e609b2dd7ca8",
+      "version": [
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": [
+        2,
+        8,
+        0
+      ]
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": [
+        2,
+        1,
+        0
+      ]
+    }
+  ]
+}

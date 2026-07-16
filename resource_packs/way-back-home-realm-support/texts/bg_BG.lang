@@ -1,0 +1,21 @@
+wbh.ui.editWaypoint=Редактиране на точка
+wbh.ui.waypointName=Име на точката
+wbh.ui.setHere=Задайте тук
+
+wbh.ui.appearance=Външен вид:
+wbh.ui.locatorBarIcon=Икона на лентата за локация
+wbh.ui.waypointColor=Цвят на точката
+
+wbh.ui.visible=Видима лента за локация
+wbh.ui.floatingText=Видим плаващ текст
+
+wbh.ui.saveAndQuit=Запиши и излез
+wbh.ui.delete=Изтриване
+wbh.ui.back=Назад
+wbh.ui.page=Страница
+
+wbh.ui.createWaypoint=Създаване на точка
+wbh.ui.manageWaypoint=Управление на точката
+wbh.ui.waypointName=Име на точката
+wbh.ui.visibleAllWaypoint=Видими всички точки от пътя
+

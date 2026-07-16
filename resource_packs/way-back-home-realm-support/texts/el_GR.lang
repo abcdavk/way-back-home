@@ -1,0 +1,21 @@
+wbh.ui.editWaypoint=Επεξεργασία σημείου διαδρομής
+wbh.ui.waypointName=Όνομα σημείου διαδρομής
+wbh.ui.setHere=Ορίστε εδώ
+
+wbh.ui.appearance=Εμφάνιση:
+wbh.ui.locatorBarIcon=Εικονίδιο γραμμής εντοπισμού
+wbh.ui.waypointColor=Χρώμα σημείου πορείας
+
+wbh.ui.visible=Visible Locator Bar
+wbh.ui.floatingText=Ορατό αιωρούμενο κείμενο
+
+wbh.ui.saveAndQuit=Αποθήκευση και Έξοδος
+wbh.ui.delete=Διαγραφή
+wbh.ui.back=Πίσω
+wbh.ui.page=Σελίδα
+
+wbh.ui.createWaypoint=Δημιουργία σημείου διαδρομής
+wbh.ui.manageWaypoint=Διαχείριση σημείου διαδρομής
+wbh.ui.waypointName=Όνομα σημείου διαδρομής
+wbh.ui.visibleAllWaypoint=Ορατά όλα τα σημεία
+

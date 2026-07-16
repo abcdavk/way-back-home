@@ -1,0 +1,21 @@
+wbh.ui.editWaypoint=ウェイポイントの編集
+wbh.ui.waypointName=ウェイポイント名
+wbh.ui.setHere=ここに設定します
+
+wbh.ui.appearance=外観:
+wbh.ui.locatorBarIcon=ロケーターバーアイコン
+wbh.ui.waypointColor=ウェイポイントの色
+
+wbh.ui.visible=表示されるロケーター バー
+wbh.ui.floatingText=表示されるフローティング テキスト
+
+wbh.ui.saveAndQuit=保存して終了
+wbh.ui.delete=削除
+wbh.ui.back=戻る
+wbh.ui.page=ページ
+
+wbh.ui.createWaypoint=ウェイポイントの作成
+wbh.ui.manageWaypoint=ウェイポイントの管理
+wbh.ui.waypointName=ウェイポイント名
+wbh.ui.visibleAllWaypoint=すべてのウェイポイントを表示
+

@@ -1,0 +1,21 @@
+wbh.ui.editWaypoint=Modifica punto di passaggio
+wbh.ui.waypointName=Nome del punto di passaggio
+wbh.ui.setHere=Imposta qui
+
+wbh.ui.appearance=Aspetto:
+wbh.ui.locatorBarIcon=Icona della barra di localizzazione
+wbh.ui.waypointColor=Colore punto di passaggio
+
+wbh.ui.visible=Barra di localizzazione visibile
+wbh.ui.floatingText=Testo mobile visibile
+
+wbh.ui.saveAndQuit=Salva ed esci
+wbh.ui.delete=Elimina
+wbh.ui.back=Indietro
+wbh.ui.page=Pagina
+
+wbh.ui.createWaypoint=Crea punto di passaggio
+wbh.ui.manageWaypoint=Gestisci punto di passaggio
+wbh.ui.waypointName=Nome del punto di passaggio
+wbh.ui.visibleAllWaypoint=Visibili tutti i waypoint
+

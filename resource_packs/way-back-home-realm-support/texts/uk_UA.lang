@@ -1,0 +1,21 @@
+wbh.ui.editWaypoint=Редагувати маршрутну точку
+wbh.ui.waypointName=Назва маршрутної точки
+wbh.ui.setHere=Встановити тут
+
+wbh.ui.appearance=Зовнішній вигляд:
+wbh.ui.locatorBarIcon=Значок панелі локатора
+wbh.ui.waypointColor=Колір маршрутної точки
+
+wbh.ui.visible=Видима панель пошуку
+wbh.ui.floatingText=Видимий плаваючий текст
+
+wbh.ui.saveAndQuit=Зберегти та вийти
+wbh.ui.delete=Видалити
+wbh.ui.back=Назад
+wbh.ui.page=Сторінка
+
+wbh.ui.createWaypoint=Створити маршрутну точку
+wbh.ui.manageWaypoint=Керуйте точками маршруту
+wbh.ui.waypointName=Назва маршрутної точки
+wbh.ui.visibleAllWaypoint=Видимі всі маршрутні точки
+

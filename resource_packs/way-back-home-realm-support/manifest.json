@@ -1,0 +1,40 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Way Back Home: Locator Bar and Waypoint | Realm Support",
+    "description": "by abcdave",
+    "uuid": "fc97d1fd-21ef-4366-a524-e609b2dd7ca8",
+    "version": [
+      1,
+      2,
+      2
+    ],
+    "min_engine_version": [
+      1,
+      26,
+      30
+    ]
+  },
+  "modules": [
+    {
+      "description": "Add-on Pack Resources",
+      "type": "resources",
+      "uuid": "b486cfd1-6156-4b32-9dce-3bdba6054133",
+      "version": [
+        1,
+        2,
+        2
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "146eb4b9-6b50-4e34-b870-668bdff3d081",
+      "version": [
+        1,
+        2,
+        2
+      ]
+    }
+  ]
+}
